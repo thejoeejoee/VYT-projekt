@@ -1,4 +1,4 @@
-$fullwidth: 960px;
+$fullwidth: 80%;
 @import url("http://fonts.googleapis.com/css?family=Exo:400,700,900&subset=latin,latin-ext");
 
 @font-face {
@@ -9,7 +9,7 @@ $fullwidth: 960px;
 body {
 	font-family: 'Exo', sans-serif;
 	color: white;
-	background: url("http://overkill.pl/includes/img_news/8514ed32968ac78a4fef.jpg") no-repeat top left fixed; 
+	background: url("http://overkill.pl/includes/img_news/8514ed32968ac78a4fef.jpg") no-repeat top center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -19,28 +19,135 @@ body {
 
 #container {
 	width: $fullwidth;
+	min-width: 380px;
+	max-width: 1200px;
 	margin: 2% auto 0;
 	padding: 20px 20px 0;
 	background-color: rgba(150,150,150,0.015);
 }
 
 article {
-	margin-top: 90px;
-	background-color: rgba(150,150,150,0.8);
+	margin-top: $fullwidth/10;
+	background-color: rgba(150,150,150,0.95);
 	color: black;
 	p {
-		padding: 15px;
+		padding: 12.5px 20px;
 		clear: both;
+		font-size: 130%;
+		line-height: 115%;
+		text-align: justify;
+		b {
+			font-weight: 700;
+		}
+		i {
+			font-style: italic;
+			letter-spacing: 0.8px;
+		}
 	}
+
+	a {
+		text-decoration: none;
+		color: black;
+		text-shadow: 0px 0px 2px rgba(red, 0.25);
+		&:hover {
+			font-weight: 700;
+			text-shadow: 0px 0px 4px rgba(red, 0.5);
+		}
+		&:visited {
+			color: black;
+		}
+	}
+
+	h1 {
+		text-align: center;
+		font-size: 300%;
+		font-weight: 900;
+		padding: 10px 0;
+	}
+
+	h3 {
+		padding: 10px 10px 10px 10px;
+		font-size: 225%;
+		font-weight: 700;
+		&.jmeno {
+			text-shadow: 0px 0px 5px rgba(white, 1);
+			font-size: 350%;
+			font-family: baronkuffnerce;
+		}
+	}
+
+	h4 {
+		padding: 5px 5px 0px;
+		font-size: 175%;
+		font-weight: 500;
+	}
+
 	img {
 		width: 100%;
 	}
+
 	.half {
 		width: 50%;
 		float: left;
 	}
 
+	table {
+		font-size: 125%;
+		margin: 0 auto;
+		padding: 10px;
+		th {
+			font-weight: 900;
+		}
+		td {
+			border: 1px solid black;
+			padding: 3px;
+		}
+	}
+	
+	ol {
+		text-align: center;
+		li {
+			list-style-type: decimal;
+			list-style-position: inside;
+			font-size: 125%;
+		}
+	}
+
+	& > div {
+		margin: 10px 0;
+		clear: none;
+		width: 50%;
+		max-width: 50%;
+		height: 100%;
+		text-align: center;
+		font-size: 130%;
+		line-height: 110%;
+		img {
+			box-shadow: 5px 5px 10px black;
+			width: 85%;
+			margin: 5px auto;
+		}
+	}		
+		
+		
+	& > div:nth-child(2n) {
+		float: left;
+	}
+
+	& > div:nth-child(2n+1) {
+		float: right;
+	}
+
+	.delic {
+		float: none !important;
+		clear: both;
+		width: 100%;
+		height: 0;
+		color: rgba(white,0)
+	}
+	
 }
+
 
 header {
 	width: 100%;
@@ -50,16 +157,16 @@ header {
  		margin: 0 auto;
  		width: $fullwidth;
 	}
+
 	nav {
 		padding: 0 auto;
-		position: relative;
 		transition: 1s ease;
 	}
-	.fixed{
+
+	nav.fixed {
+		width: $fullwidth;
 		position: fixed;
-		width: 100%;
-		left: 0; 
-		top: 0; 
+		top: 0px;
 	}
 
 	ul {
@@ -80,7 +187,8 @@ header {
 		display: inline;
 		width: 50px;
 		height: 30px;
-		font-size: 3rem;
+		font-size: 3.25rem;
+		line-height: 4rem;
 		font-weight: 900;
 		text-decoration: none;
 		text-shadow: 0px 0px 5px rgba(white, 1);
@@ -91,8 +199,7 @@ header {
 		&:hover {
 			transition: .20s ease;
 			color: black;
-			font-size: 4rem;
-			
+			font-size: 3.5rem;
 			text-shadow: 2px 2px 0px rgba(red,0.8),
 						-2px 2px 0px rgba(red,0.8),
 						2px -2px 0px rgba(red,0.8),
@@ -102,11 +209,12 @@ header {
 }
 
 footer {
+	clear: both;
 	text-align: center;
 	margin-top: 40px;
 	padding-top: 25px;
 	width: 100%;
-	background-color: rgba(black, 0.9);
+	background-color: rgba(black, 0.8);
 	img {
 		margin: 0 auto;
 	}
